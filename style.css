@@ -370,15 +370,6 @@ padding-left: 5%;
   height: auto;
 }
 
-.navigation-manual {
-  position: absolute;
-  width: 100%;
-  margin-top: -40px;
-  display: flex;
-  justify-content: center;
-  padding-right: 10%;
-}
-
 .manual-btn {
   border: 2px solid white;
   padding: 5px;
