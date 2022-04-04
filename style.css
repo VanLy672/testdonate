@@ -14,6 +14,7 @@ body {
   font-family: "Poppins", sans-serif, "Segoe UI", Tahoma, Geneva, Verdana;
   font-weight: 500;
   outline: none;
+  
 }
 
 h1,
@@ -339,4 +340,115 @@ padding-left: 5%;
   transform: scale(1.1);
   filter: invert(0%) sepia(59%) saturate(6585%) hue-rotate(125deg)
     brightness(86%) contrast(85%);
+}
+
+
+/* Slides */
+.slider-content {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.slides-content {
+  width: 500%;
+  height: auto;
+  display: flex;
+}
+
+.slides-content input {
+  display: none;
+}
+
+.slide-content {
+  width: 20%;
+  transition: 2s;
+}
+
+.slide-content img {
+  width: 100%;
+  height: auto;
+}
+
+.navigation-manual {
+  position: absolute;
+  width: 100%;
+  margin-top: -40px;
+  display: flex;
+  justify-content: center;
+  padding-right: 5%;
+}
+
+.manual-btn {
+  border: 2px solid white;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.manual-btn:not(:last-child) {
+  margin-right: 40px;
+}
+
+.manual-btn:hover {
+  background: white;
+}
+
+#radio1:checked~.first {
+  margin-left: 0;
+}
+
+#radio2:checked~.first {
+  margin-left: -20%;
+}
+
+#radio3:checked~.first {
+  margin-left: -40%;
+}
+
+#radio4:checked~.first {
+  margin-left: -60%;
+}
+
+.navigation-auto {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: -40px;
+}
+
+.navigation-auto div {
+  border: 2px solid white;
+  padding: 5px;
+  border-radius: 10px;
+  transition: 1s;
+}
+
+.navigation-auto div:not(:last-child) {
+  margin-right: 40px;
+}
+
+#radio1:checked~.navigation-auto .auto-btn1 {
+  background: white;
+}
+
+#radio2:checked~.navigation-auto .auto-btn2 {
+  background: white;
+}
+
+#radio3:checked~.navigation-auto .auto-btn3 {
+  background: white;
+}
+
+#radio4:checked~.navigation-auto .auto-btn4 {
+  background: white;
+}
+
+@media only screen and (max-width:300px) {
+  .manual-btn {
+      height: 3px;
+      width: 3px;
+  }
 }
