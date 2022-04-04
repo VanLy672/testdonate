@@ -1,70 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    .
+    <main class="main">
+        <!-- Header -->
+        <header class="header">
 
-
-    <!-- DONATE -->
-    <div id="smart-button-container">
-        <div style="text-align: center;">
-            <div id="paypal-button-container"></div>
-        </div>
-    </div>
-    <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
-    <script>
-        function initPayPalButton() {
-            paypal.Buttons({
-                style: {
-                    shape: 'rect',
-                    color: 'gold',
-                    layout: 'vertical',
-                    label: 'paypal',
-
-                },
-
-                createOrder: function(data, actions) {
-                    return actions.order.create({
-                        purchase_units: [{
-                            "amount": {
-                                "currency_code": "USD",
-                                "value": 999
-                            }
-                        }]
-                    });
-                },
-
-                onApprove: function(data, actions) {
-                    return actions.order.capture().then(function(orderData) {
-
-                        // Full available details
-                        console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
-
-                        // Show a success message within this page, e.g.
-                        const element = document.getElementById('paypal-button-container');
-                        element.innerHTML = '';
-                        element.innerHTML = '<h3>Thank you for your payment!</h3>';
-
-                        // Or go to another URL:  actions.redirect('thank_you.html');
-
-                    });
-                },
-
-                onError: function(err) {
-                    console.log(err);
-                }
-            }).render('#paypal-button-container');
-        }
-        initPayPalButton();
-    </script>
-    <!-- DONATE -->
+        </header>
+        <!-- Landing -->
+        <section class="landing">
+          <div class="landing-text">
+            <h1>DONATE NOW</h1>
+            <p>
+                Thanks to your regular generosity we are able to run our activities and maximize our impact.
+            </p>
+            <a href="https://www.sandbox.paypal.com/donate/?hosted_button_id=5E3HMTXJLKHC4" class="btn btn-lg">Donate</a>
+          </div>
+          <div class="landing-image">
+            <img src="https://store.rehahnphotographer.com/wp-content/uploads/2022/02/Golden-Fields-banner.jpg" alt="Working Illustration" />
+          </div>
+        </section>
+        
+        <!-- Footer -->
+        <footer class="footer" id="resources">
+          <div class="container">
+            <!-- Website Logo -->
+            <div class="logo">
+              <a href="#">
+                <img src="https://raw.githubusercontent.com/MohamedAridah/frontendmentor_url-shortening-api/main/images/logo.svg" alt="" />
+              </a>
+            </div>
+            <!-- Quick Links -->
+            <div class="quick-links">
+              <div class="links-group">
+                <span>Features</span>
+                <div>
+                  <a href="#">Link Shortening</a>
+                  <a href="#">Branded Links</a>
+                  <a href="#">Analytics</a>
+                </div>
+              </div>
+              <div class="links-group">
+                <span>Resources</span>
+                <div>
+                  <a href="#">Blog</a>
+                  <a href="#">Developers</a>
+                  <a href="#">Support</a>
+                </div>
+              </div>
+              <div class="links-group">
+                <span>Company</span>
+                <div>
+                  <a href="#">About</a>
+                  <a href="#">Our Team</a>
+                  <a href="#">Careers</a>
+                  <a href="#">Contact</a>
+                </div>
+              </div>
+            </div>
+            <!-- Social Media -->
+            <div class="social-media">
+              <a href="#">
+                <img src="https://raw.githubusercontent.com/MohamedAridah/frontendmentor_url-shortening-api/main/images/icon-facebook.svg" alt="Facebook Logo">
+              </a>
+              <a href="#">
+                <img src="https://raw.githubusercontent.com/MohamedAridah/frontendmentor_url-shortening-api/main/images/icon-twitter.svg" alt="Twitter Logo">
+              </a>
+              <a href="#">
+                <img src="https://raw.githubusercontent.com/MohamedAridah/frontendmentor_url-shortening-api/main/images/icon-pinterest.svg" alt="Pinterest Logo">
+              </a>
+              <a href="#">
+                <img src="https://raw.githubusercontent.com/MohamedAridah/frontendmentor_url-shortening-api/main/images/icon-instagram.svg" alt="Instagram Logo">
+              </a>
+            </div>
+          </div>
+        </footer>
+      </main>
+    
 </body>
-
 </html>
